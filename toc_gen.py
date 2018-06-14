@@ -15,9 +15,7 @@ def write_file(page):
 
 
 def write_toc(ids):
-    lines = ['<p><a href="{0}">{1}</a></p>\n'.format(i['id'], i['full']) for i in ids]
-    for i in lines:
-        print(lines)
+    lines = ['<p><a href="#{0}">{1}</a></p>\n'.format(i['id'], i['full']) for i in ids]
     outfile = sys.argv[1][:-5] + "_toc.html"
     with open(outfile, "a") as file:
         for line in lines:
